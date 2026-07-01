@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #box {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            line-height: 100px;
+            margin: 20px auto;
+            border: 2px solid black;
+        }
+
+        button, input {
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+
+    <script>
+        // Mouseover Event
+        function mouseOver() {
+            document.getElementById("box").style.backgroundColor = "yellow";
+            document.getElementById("box").innerHTML = "Mouse Over!";
+        }
+
+        // Mouseout Event
+        function mouseOut() {
+            document.getElementById("box").style.backgroundColor = "lightblue";
+            document.getElementById("box").innerHTML = "Move Mouse Here";
+        }
+
+        // Onclick Event
+        function buttonClick() {
+            alert("Button Clicked!");
+        }
+
+        // Keyboard Event
+        function keyPressed() {
+            document.getElementById("result").innerHTML =
+                "You are typing: " + document.getElementById("text").value;
+        }
+    </script>
+</head>
+<body>
+
+    <h2>JavaScript Events Example</h2>
+
+    <!-- Mouseover Event -->
+    <div id="box" onmouseover="mouseOver()" onmouseout="mouseOut()">
+        Move Mouse Here
+    </div>
+
+    <!-- Onclick Event -->
+    <button onclick="buttonClick()">Click Me</button>
+
+    <br><br>
+
+    <!-- Keyboard Event -->
+    <input type="text" id="text" onkeyup="keyPressed()" placeholder="Type here">
+
+    <p id="result"></p>
+
+</body>
+</html>
